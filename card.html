@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamza Salami — Digital Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      background: #faf8f5;
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .card__avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      border: 3px solid #e8e0d8;
+    }
+    .card__avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card__name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a2e;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .card__role {
+      font-size: 14px;
+      font-weight: 500;
+      color: #c4956a;
+      margin-bottom: 4px;
+    }
+    .card__sub {
+      font-size: 12px;
+      color: #8a8078;
+      margin-bottom: 28px;
+    }
+    .card__qr {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+    .card__qr img {
+      width: 180px;
+      height: 180px;
+    }
+    .card__scan {
+      font-size: 12px;
+      color: #a09890;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+    .card__links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid #e8e0d8;
+      font-size: 13px;
+      font-weight: 600;
+      color: #4a4a5a;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .card__link:hover {
+      background: #f4f0eb;
+    }
+    .card__link--primary {
+      background: #1a1a2e;
+      color: #faf8f5;
+      border-color: #1a1a2e;
+    }
+    .card__link--primary:hover {
+      background: #2a2a3e;
+    }
+    .card__domain {
+      margin-top: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #c4956a;
+    }
+    .card__back {
+      margin-top: 20px;
+    }
+    .card__back a {
+      font-size: 12px;
+      color: #a09890;
+      text-decoration: none;
+    }
+    .card__back a:hover {
+      color: #6b6b7b;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__avatar">
+      <img src="images/sunset.jpg" alt="Hamza Salami">
+    </div>
+    <div class="card__name">Hamza Salami</div>
+    <div class="card__role">Freelance Solution Architect</div>
+    <div class="card__sub">Supply Chain × AI · APICS Certified</div>
+
+    <div class="card__qr">
+      <img src="images/qr-code.svg" alt="Scan to visit flowka.dev">
+    </div>
+    <div class="card__scan">Scan to visit my portfolio</div>
+
+    <div class="card__links">
+      <a href="mailto:SalamiHamza@gmail.com" class="card__link card__link--primary">
+        ✉️ SalamiHamza@gmail.com
+      </a>
+      <a href="tel:+33630870117" class="card__link">
+        📞 +33 6 30 87 01 17
+      </a>
+      <a href="https://www.linkedin.com/in/hamza-salami-243a339a/" target="_blank" rel="noopener" class="card__link">
+        LinkedIn →
+      </a>
+    </div>
+
+    <div class="card__domain">flowka.dev</div>
+    <div class="card__back">
+      <a href="index.html">← Back to portfolio</a>
+    </div>
+  </div>
+</body>
+</html>
