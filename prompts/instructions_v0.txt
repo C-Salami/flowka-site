@@ -1,0 +1,114 @@
+I need you to make several updates to my flowka-site project. Here's everything:
+
+## 1. Fix "7+" to "8+" everywhere
+In index.html, change "7+" to "8+" in the hero stats section (the years stat).
+
+## 2. Add "Blog" to the nav
+In both index.html and card.html nav, add a "Blog" link pointing to "blog.html" — place it between "Projects" and "QR Card" (rename "QR Card" to "Carte Visite").
+
+## 3. Create blog.html
+Create a new page blog.html with the same styling/fonts/nav as index.html. Content:
+- Same nav bar as index.html
+- Same footer as index.html
+- Title: "Blog"
+- Subtitle: "Thoughts on how AI is reshaping supply chain."
+- Then a centered message: "More articles coming soon. Stay tuned."
+- Same warm/cream aesthetic as the rest of the site.
+
+## 4. Create individual project pages
+Create these HTML files in a "projects/" folder. Each should have the same nav, styling, footer as index.html, with:
+- A back link "← Back to projects" pointing to "index.html#projects"
+- Project title, description, a simple flow/architecture diagram using HTML/CSS (boxes and arrows, no images needed), and links to GitHub and YouTube video.
+
+### projects/scenario-1.html — "LLM-Powered Production Scheduler"
+- Description: A Streamlit demo app for an FMCG/cosmetics manufacturer. Builds a multi-stage production schedule (Mix → Transfer → Fill → Finish), visualizes it as an interactive Gantt chart, and lets planners adjust the plan using natural language commands via LLM intent extraction. Showcases how LLMs can make production planning more natural and interactive.
+- Diagram: show flow: [Natural Language Input] → [LLM Intent Extraction] → [Schedule Engine] → [Interactive Gantt Chart]
+- GitHub: https://github.com/Flowka-lab/Scenario-1
+- YouTube: https://www.youtube.com/watch?v=7IH_BvG-9jI&t=1s
+- Tech: Python, Streamlit, OpenAI API, Pandas, Altair
+
+### projects/scenario-2.html — "Voice-Enabled AI Scheduling"
+- Description: Extends Scenario 1 by adding speech recognition. Planners can speak commands to adjust the production schedule — combining voice input with LLM-powered scheduling decisions for a hands-free planning experience.
+- Diagram: [Voice Input / Speech Recognition] → [LLM Processing] → [Schedule Adjustment] → [Updated Gantt Chart]
+- GitHub: https://github.com/Flowka-lab/Scenario-2
+- YouTube: https://www.youtube.com/watch?v=7IH_BvG-9jI&t=1s (same video as Scenario 1)
+- Tech: Python, Streamlit, Speech Recognition, OpenAI API
+
+### projects/scenario-3.html — "AI Scheduling Assistant"
+- Description: An autonomous AI scheduling assistant that manages planning requests end-to-end. Unlike Scenarios 1 & 2 where the user drives the interaction, here the AI agent autonomously interprets requests, evaluates constraints, and proposes optimized schedules.
+- Diagram: [User Request] → [AI Agent] → [Constraint Analysis] → [Schedule Optimization] → [Proposed Plan]
+- GitHub: https://github.com/Flowka-lab/Scenario-3
+- YouTube: https://www.youtube.com/watch?v=VtXtGFase-I&t=3s
+- Tech: Python, AI Agents, Planning Optimization
+
+### projects/scenario-4.html — "AI Mailroom Agent"
+- Description: An automated AI-powered workflow that scans incoming documents (invoices, purchase orders, emails), extracts key information using AI, and performs actions — routing, classification, data entry. Built to eliminate manual document processing in supply chain operations.
+- Diagram: [Incoming Documents] → [AI Scanner / OCR] → [Information Extraction] → [Classification & Routing] → [Automated Actions]
+- GitHub: https://github.com/Flowka-lab/Scenario-4
+- YouTube: https://www.youtube.com/watch?v=Z3i1ZYh_O-Y
+- Tech: Python, Computer Vision, NLP, OCR
+
+### projects/scenario-5.html — "Demand Planning App"
+- Description: A lightweight demand planning application for forecasting, manual adjustments, and scenario analysis. Provides visual dashboards to support supply chain planners in making data-driven decisions about future demand.
+- Diagram: [Historical Data] → [Forecasting Engine] → [Planner Adjustments] → [Scenario Analysis] → [Final Forecast]
+- GitHub: https://github.com/Flowka-lab/Scenario-5
+- YouTube: https://www.youtube.com/watch?v=0DrZOr42Ab8
+- Tech: Python, Forecasting, ML, Data Visualization
+
+### projects/scenario-6.html — "AI Procurement Agent"
+- Description: Chari — an AI-powered procurement agent that automates sourcing workflows using LLM agents. Handles supplier research, comparison, RFQ generation, and negotiation support.
+- Instead of a diagram, show a prominent "🔄 This project is currently in progress" banner.
+- GitHub: https://github.com/Flowka-lab/Scenario-6
+- YouTube: https://www.youtube.com/@Flow-Ka (general channel)
+- Tech: Python, LLM Agents, Procurement
+
+### projects/hourzone.html — "HourZone.io"
+- Description: A timezone coordination tool for distributed teams and travelers. Plan meetings across timezones, visualize overlaps, and find the best meeting windows. Built and shipped as a side project.
+- Link to: https://hourzone.io
+- No GitHub link (private repo)
+- No YouTube
+- Show a "Visit HourZone.io →" button prominently
+
+## 5. Update project cards on index.html
+Each project card on the main page should link to its respective project page. Update the project grid section:
+- Scenario 1 card title links to projects/scenario-1.html
+- Scenario 2 card title links to projects/scenario-2.html
+- Scenario 3 card title links to projects/scenario-3.html
+- Scenario 4: rename from "Automatic AI Doc Scanner" to "AI Mailroom Agent", link to projects/scenario-4.html
+- Scenario 5 card title links to projects/scenario-5.html
+- Scenario 6 (AI Procurement Agent) card title links to projects/scenario-6.html
+- HourZone banner links to projects/hourzone.html (keep the external link too)
+
+Also update the GitHub links on project cards to point to the EXACT repos:
+- Scenario 1: https://github.com/Flowka-lab/Scenario-1
+- Scenario 2: https://github.com/Flowka-lab/Scenario-2
+- Scenario 3: https://github.com/Flowka-lab/Scenario-3
+- Scenario 4: https://github.com/Flowka-lab/Scenario-4
+- Scenario 5: https://github.com/Flowka-lab/Scenario-5
+- Scenario 6: https://github.com/Flowka-lab/Scenario-6
+
+And update Demo/YouTube links per project:
+- Scenario 1: https://www.youtube.com/watch?v=7IH_BvG-9jI&t=1s
+- Scenario 2: https://www.youtube.com/watch?v=7IH_BvG-9jI&t=1s
+- Scenario 3: https://www.youtube.com/watch?v=VtXtGFase-I&t=3s
+- Scenario 4: https://www.youtube.com/watch?v=Z3i1ZYh_O-Y
+- Scenario 5: https://www.youtube.com/watch?v=0DrZOr42Ab8
+- Scenario 6: no video link, just "In progress" label
+
+## 6. Redesign card.html as a "Carte Visite"
+Redesign card.html to look like a real business card (carte de visite). Layout:
+- Horizontal card layout (landscape orientation), centered on a dark background
+- Left side: Name "Hamza Salami", title "Freelance Solution Architect", subtitle "Supply Chain × AI · APICS Certified", then email (SalamiHamza@gmail.com) and phone (+33 6 30 87 01 17) and LinkedIn link
+- Right side: QR code (images/qr-code.svg) with "Scan to visit flowka.dev" underneath
+- Same warm cream/dark navy color scheme as the site
+- Professional, clean, stylish — like a premium printed card
+- Keep the "← Back to portfolio" link below the card
+- Rename in nav from "QR Card" to "Carte Visite"
+
+## 7. Final steps
+After making all changes:
+- git add .
+- git commit -m "Add blog, project pages, carte visite, fix stats"
+- git push
+
+Make sure all new HTML pages have the same favicon, fonts, and meta tags as index.html. Keep the same warm cream aesthetic throughout. All links should work.

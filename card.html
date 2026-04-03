@@ -3,159 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hamza Salami — Digital Card</title>
+  <title>Hamza Salami — Carte Visite</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text x='28' y='75' font-family='Georgia,serif' font-size='72' font-weight='bold' fill='%23c4956a'>F</text></svg>">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf8f5;
+      --bg-alt: #f4f0eb;
+      --text: #1a1a2e;
+      --text-light: #6b6b7b;
+      --text-muted: #8a8078;
+      --text-faint: #a09890;
+      --warm: #c4956a;
+      --border: #e8e0d8;
+      --dark: #1a1a2e;
+      --dark-border: #3a3a4e;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      background: #1a1a2e;
+      font-family: var(--sans);
+      background: var(--dark);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 80px 24px 40px;
       -webkit-font-smoothing: antialiased;
     }
-    .card {
-      background: #faf8f5;
-      border-radius: 20px;
-      padding: 48px 40px;
-      max-width: 380px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; background: rgba(26,26,46,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); }
+    .nav__logo { font-family: var(--sans); font-weight: 700; font-size: 17px; letter-spacing: -0.3px; color: var(--bg); }
+    .nav__logo span { color: var(--warm); }
+    .nav__links { display: flex; gap: 24px; align-items: center; font-family: var(--sans); font-size: 13px; font-weight: 500; color: #8a8090; }
+    .nav__links a { color: #8a8090; text-decoration: none; transition: color 0.2s; }
+    .nav__links a:hover { color: var(--bg); }
+    .nav__mobile { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav__mobile svg { width: 24px; height: 24px; stroke: var(--bg); }
+
+    @media (max-width: 640px) {
+      .nav__links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26,26,46,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 20px 32px; gap: 16px; border-bottom: 1px solid var(--dark-border); }
+      .nav__links.open { display: flex; }
+      .nav__mobile { display: block; }
     }
-    .card__avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px;
-      border: 3px solid #e8e0d8;
-    }
-    .card__avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .card__name {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 28px;
-      font-weight: 800;
-      color: #1a1a2e;
-      letter-spacing: -0.5px;
-      margin-bottom: 4px;
-    }
-    .card__role {
-      font-size: 14px;
-      font-weight: 500;
-      color: #c4956a;
-      margin-bottom: 4px;
-    }
-    .card__sub {
-      font-size: 12px;
-      color: #8a8078;
-      margin-bottom: 28px;
-    }
-    .card__qr {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 24px;
-      display: inline-block;
-    }
-    .card__qr img {
-      width: 180px;
-      height: 180px;
-    }
-    .card__scan {
-      font-size: 12px;
-      color: #a09890;
-      margin-bottom: 28px;
-      letter-spacing: 0.5px;
-    }
-    .card__links {
+
+    /* CARD */
+    .card-wrap {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+      max-width: 760px;
     }
-    .card__link {
+
+    .biz-card {
+      background: var(--bg);
+      border-radius: 20px;
+      padding: 48px 52px;
+      width: 100%;
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+
+    .card-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .card-name {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.8px;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--warm);
+      margin-bottom: 3px;
+    }
+
+    .card-sub {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .card-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--border);
+      margin-bottom: 24px;
+    }
+
+    .card-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .card-contact:hover { color: var(--text); }
+
+    .card-contact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--bg-alt);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      border: 1px solid #e8e0d8;
       font-size: 13px;
-      font-weight: 600;
-      color: #4a4a5a;
-      text-decoration: none;
-      transition: all 0.2s;
+      flex-shrink: 0;
     }
-    .card__link:hover {
-      background: #f4f0eb;
-    }
-    .card__link--primary {
-      background: #1a1a2e;
-      color: #faf8f5;
-      border-color: #1a1a2e;
-    }
-    .card__link--primary:hover {
-      background: #2a2a3e;
-    }
-    .card__domain {
-      margin-top: 24px;
+
+    .card-domain {
+      margin-top: 28px;
+      font-family: var(--sans);
       font-size: 13px;
-      font-weight: 600;
-      color: #c4956a;
+      font-weight: 700;
+      color: var(--warm);
+      letter-spacing: 0.5px;
     }
-    .card__back {
-      margin-top: 20px;
+
+    .card-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
     }
-    .card__back a {
-      font-size: 12px;
-      color: #a09890;
+
+    .card-qr {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .card-qr img {
+      width: 160px;
+      height: 160px;
+      display: block;
+    }
+
+    .card-scan {
+      font-family: var(--sans);
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    .card-back {
+      font-family: var(--sans);
+      font-size: 13px;
+    }
+
+    .card-back a {
+      color: #6a6a7a;
       text-decoration: none;
+      transition: color 0.2s;
     }
-    .card__back a:hover {
-      color: #6b6b7b;
+
+    .card-back a:hover { color: var(--bg); }
+
+    @media (max-width: 600px) {
+      .biz-card {
+        flex-direction: column;
+        padding: 36px 28px;
+        gap: 32px;
+      }
+      .card-right {
+        width: 100%;
+        border-top: 1px solid var(--border);
+        padding-top: 28px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="card__avatar">
-      <img src="images/sunset.jpg" alt="Hamza Salami">
-    </div>
-    <div class="card__name">Hamza Salami</div>
-    <div class="card__role">Freelance Solution Architect</div>
-    <div class="card__sub">Supply Chain × AI · APICS Certified</div>
 
-    <div class="card__qr">
-      <img src="images/qr-code.svg" alt="Scan to visit flowka.dev">
-    </div>
-    <div class="card__scan">Scan to visit my portfolio</div>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__logo">flowka<span>.</span></div>
+  <button class="nav__mobile" onclick="document.querySelector('.nav__links').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav__links">
+    <a href="index.html#about" onclick="this.parentElement.classList.remove('open')">About</a>
+    <a href="index.html#journey" onclick="this.parentElement.classList.remove('open')">Journey</a>
+    <a href="index.html#projects" onclick="this.parentElement.classList.remove('open')">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="card.html" style="color:#d4c5b5;">Carte Visite</a>
+    <a href="index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  </div>
+</nav>
 
-    <div class="card__links">
-      <a href="mailto:SalamiHamza@gmail.com" class="card__link card__link--primary">
-        ✉️ SalamiHamza@gmail.com
-      </a>
-      <a href="tel:+33630870117" class="card__link">
-        📞 +33 6 30 87 01 17
-      </a>
-      <a href="https://www.linkedin.com/in/hamza-salami-243a339a/" target="_blank" rel="noopener" class="card__link">
-        LinkedIn →
-      </a>
+<div class="card-wrap">
+  <div class="biz-card">
+    <!-- Left: identity + contacts -->
+    <div class="card-left">
+      <div class="card-name">Hamza Salami</div>
+      <div class="card-title">Freelance Solution Architect</div>
+      <div class="card-sub">Supply Chain × AI · APICS Certified</div>
+      <div class="card-divider"></div>
+      <div class="card-contacts">
+        <a href="mailto:SalamiHamza@gmail.com" class="card-contact">
+          <div class="card-contact-icon">✉</div>
+          SalamiHamza@gmail.com
+        </a>
+        <a href="tel:+33630870117" class="card-contact">
+          <div class="card-contact-icon">📞</div>
+          +33 6 30 87 01 17
+        </a>
+        <a href="https://www.linkedin.com/in/hamza-salami-243a339a/" target="_blank" rel="noopener" class="card-contact">
+          <div class="card-contact-icon">in</div>
+          LinkedIn →
+        </a>
+      </div>
+      <div class="card-domain">flowka.dev</div>
     </div>
 
-    <div class="card__domain">flowka.dev</div>
-    <div class="card__back">
-      <a href="index.html">← Back to portfolio</a>
+    <!-- Right: QR code -->
+    <div class="card-right">
+      <div class="card-qr">
+        <img src="images/qr-code.svg" alt="Scan to visit flowka.dev">
+      </div>
+      <div class="card-scan">Scan to visit flowka.dev</div>
     </div>
   </div>
+
+  <div class="card-back">
+    <a href="index.html">← Back to portfolio</a>
+  </div>
+</div>
+
 </body>
 </html>
