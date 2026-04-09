@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Clay Tablets to AI: The Unstoppable Evolution of the Buyer — Flowka Lab</title>
+  <meta name="description" content="A walk through history of how the sourcing profession evolved from ancient Roman grain logistics to AI-powered autonomous procurement. By Hamza Salami.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text x='28' y='75' font-family='Georgia,serif' font-size='72' font-weight='bold' fill='%23c4956a'>F</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf8f5;
+      --bg-alt: #f4f0eb;
+      --text: #1a1a2e;
+      --text-light: #6b6b7b;
+      --text-muted: #8a8078;
+      --text-faint: #a09890;
+      --warm: #c4956a;
+      --border: #e8e0d8;
+      --dark: #1a1a2e;
+      --dark-border: #3a3a4e;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--serif); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.7; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #d4c5b5; border-radius: 3px; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; transition: all 0.4s; }
+    .nav.scrolled { background: rgba(250,248,245,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav__logo { font-family: var(--sans); font-weight: 700; font-size: 17px; letter-spacing: -0.3px; }
+    .nav__logo span { color: var(--warm); }
+    .nav__links { display: flex; gap: 24px; align-items: center; font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--text-light); }
+    .nav__links a { color: var(--text-light); }
+    .nav__mobile { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav__mobile svg { width: 24px; height: 24px; stroke: var(--text); }
+
+    @media (max-width: 640px) {
+      .nav__links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250,248,245,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 20px 32px; gap: 16px; border-bottom: 1px solid var(--border); }
+      .nav__links.open { display: flex; }
+      .nav__mobile { display: block; }
+    }
+
+    /* ARTICLE */
+    .article-wrap { max-width: 680px; margin: 0 auto; padding: 120px 24px 100px; }
+
+    .back-link { font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; margin-bottom: 48px; }
+
+    .article-meta { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--warm); margin-bottom: 20px; }
+
+    .article-title { font-size: clamp(28px, 5vw, 46px); font-weight: 800; letter-spacing: -1px; line-height: 1.12; margin-bottom: 28px; }
+
+    .article-byline { display: flex; align-items: center; gap: 16px; font-family: var(--sans); font-size: 13px; color: var(--text-muted); padding-bottom: 28px; border-bottom: 1px solid var(--border); margin-bottom: 48px; flex-wrap: wrap; }
+    .article-byline strong { color: var(--text); font-weight: 600; }
+    .article-byline-sep { color: var(--border); }
+
+    /* BODY TEXT */
+    .article-body { font-size: 18px; line-height: 1.85; color: var(--text); }
+
+    .article-body p { margin-bottom: 28px; }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-top: 56px;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .article-body strong { font-weight: 700; color: var(--text); }
+
+    .article-body ul {
+      padding-left: 24px;
+      margin-bottom: 28px;
+    }
+
+    .article-body ul li {
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+
+    /* REFERENCES */
+    .article-references {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .article-references h2 {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 20px;
+    }
+
+    .article-references ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .article-references ul li {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-references ul li:last-child { border-bottom: none; }
+
+    /* TAGS */
+    .article-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .article-tag { font-family: var(--sans); font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 4px; background: rgba(26,26,46,0.05); color: var(--text-muted); }
+
+    /* FOOTER */
+    .footer { padding: 80px 24px 40px; background: var(--dark); color: #d4c5b5; text-align: center; }
+    .footer__title { font-size: 32px; font-weight: 700; color: var(--bg); margin-bottom: 28px; letter-spacing: -0.5px; }
+    .footer__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+    .footer__email { display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border-radius: 8px; background: var(--warm); color: var(--dark); font-family: var(--sans); font-size: 14px; font-weight: 600; }
+    .footer__phone { display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border-radius: 8px; border: 1px solid var(--dark-border); color: #d4c5b5; font-family: var(--sans); font-size: 14px; font-weight: 500; }
+    .footer__social { display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; font-family: var(--sans); font-size: 13px; font-weight: 500; }
+    .footer__social a { color: #8a8090; }
+    .footer__copy { font-family: var(--sans); font-size: 11px; color: #4a4a5e; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__logo">flowka<span>.</span></div>
+  <button class="nav__mobile" onclick="document.querySelector('.nav__links').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav__links">
+    <a href="../index.html#about" onclick="this.parentElement.classList.remove('open')">About</a>
+    <a href="../index.html#journey" onclick="this.parentElement.classList.remove('open')">Journey</a>
+    <a href="../index.html#projects" onclick="this.parentElement.classList.remove('open')">Projects</a>
+    <a href="../blog.html" style="color:var(--text);">Blog</a>
+    <a href="../card.html">Carte Visite</a>
+    <a href="../index.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  </div>
+</nav>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+
+  <a href="../blog.html" class="back-link">&#8592; Back to Blog</a>
+
+  <p class="article-meta">Supply Chain &middot; AI &middot; Procurement</p>
+
+  <h1 class="article-title">From Clay Tablets to AI: The Unstoppable Evolution of the Buyer</h1>
+
+  <div class="article-byline">
+    <span><strong>Hamza Salami</strong></span>
+    <span class="article-byline-sep">&mdash;</span>
+    <span>April 2026</span>
+    <span class="article-byline-sep">&middot;</span>
+    <span>5 min read</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>Imagine a Roman quartermaster trying to source grain for a legion of 5,000 soldiers. Now, fast forward to a modern procurement officer trying to source microchips during a global pandemic.</p>
+
+    <p>The tools have changed, but the mission remains the same: get the right stuff, at the right price, at the right time.</p>
+
+    <p>Purchasing and sourcing are among the oldest professions in human history. But the way this critical role operates is currently undergoing the most radical transformation it has ever seen — all thanks to Artificial Intelligence. Let's take a quick walk through history to see how we got here, and where the buyer is going next.</p>
+
+    <h2>The Ancient Hustle (~2,000 Years Ago)</h2>
+
+    <p>Two millennia ago, sourcing was literally a matter of life or death. The Roman Empire maintained an incredibly complex supply chain network known as the Cura Annonae (the grain dole). Sourcing professionals back then didn't have spreadsheets. They had clay tablets, papyrus scrolls, and an acute knowledge of which Egyptian merchants were trustworthy. The role was purely transactional and heavily reliant on personal relationships and physical logistics.</p>
+
+    <h2>The Birth of the "Materials Man" (The 1800s)</h2>
+
+    <p>If antiquity built the foundation, the Industrial Revolution built the framework. This is where sourcing truly became a profession.</p>
+
+    <p>In the 1800s, mass production changed the game. Suddenly, factories needed a constant, standardized flow of raw materials. In 1832, visionary mathematician Charles Babbage (often called the "father of the computer") published a book where he explicitly outlined the need for a dedicated "materials man" — someone whose sole job was to select, buy, and track goods.</p>
+
+    <p>With the invention of the telegraph and the expansion of the railroads, buyers were no longer limited to local suppliers. They could suddenly check prices across the country in hours rather than months. The purchasing agent shifted from a simple haggler to a vital corporate cost-controller.</p>
+
+    <h2>Globalization and the Spreadsheet Era (The 1900s)</h2>
+
+    <p>The 20th century turned sourcing into a global chess game. Post-WWII manufacturing booms and the introduction of the Toyota Production System popularized "Just-In-Time" inventory. Buyers could no longer just buy in bulk and hoard; they had to perfectly synchronize deliveries to the hour.</p>
+
+    <p>Then came the 1980s and 90s, bringing the buyer's best friend and worst enemy: the spreadsheet and early ERP (Enterprise Resource Planning) systems. Buyers transitioned from paper catalogs to digital databases. The problem? They were suddenly drowning in data, spending 80% of their time just managing purchase orders and arguing with Excel formulas.</p>
+
+    <h2>The AI Revolution (Today and Tomorrow)</h2>
+
+    <p>Which brings us to right now. The modern supply chain is far too volatile, complex, and fast-moving for human brains to manage with spreadsheets alone. Enter Artificial Intelligence.</p>
+
+    <p>AI isn't just a buzzword; it is actively ripping the "boring" parts out of the sourcing role. Here is how AI is evolving the buyer of tomorrow:</p>
+
+    <p><strong>Predictive Risk Management</strong> &mdash; Instead of reacting to a delayed shipment, AI scans global weather patterns, port congestions, and even news sentiment. It can tap a buyer on the virtual shoulder and say, "There is an 80% chance of a strike at this port in three weeks; I recommend re-routing these orders now."</p>
+
+    <p><strong>Autonomous Negotiation</strong> &mdash; For "tail spend" (the thousands of low-value, everyday items a company buys), AI bots are now capable of reaching out to suppliers, comparing prices, and negotiating standard contracts without a human ever lifting a finger.</p>
+
+    <p><strong>The Death of the "Paper Pusher"</strong> &mdash; By automating purchase order generation, invoice matching, and supplier onboarding, AI frees up the sourcing professional's time.</p>
+
+    <h2>The Verdict</h2>
+
+    <p>The buyer is dead; long live the Strategic Sourcing Manager.</p>
+
+    <p>In the next five to ten years, the role will completely transition away from manual data entry and tactical buying. Sourcing professionals will become relationship builders, sustainability experts, and strategic risk managers, using AI as their co-pilot to navigate global trade.</p>
+
+    <p>We have come a long way from the Roman grain dole, but the hustle? That never changes.</p>
+
+    <div class="article-references">
+      <h2>References &amp; Historical Context</h2>
+      <ul>
+        <li><strong>The Roman Grain Dole:</strong> Cura Annonae, the historical Roman system of importing and distributing grain, highlighting early government-scale sourcing logistics. (Garnsey, P. <em>Famine and Food Supply in the Graeco-Roman World</em>.)</li>
+        <li><strong>The 1800s Shift:</strong> Babbage, Charles. <em>On the Economy of Machinery and Manufactures</em> (1832). Babbage was one of the first to formally document the division of labor and the specific need for a dedicated materials/purchasing role in factories.</li>
+        <li><strong>Just-In-Time (JIT):</strong> Developed by Toyota in the mid-20th century, which revolutionized supplier relationship management and quality control over pure price-haggling.</li>
+        <li><strong>AI in Modern Supply Chain:</strong> Derived from current industry trends reported by Gartner and McKinsey &amp; Company regarding autonomous procurement, predictive analytics, and AI-driven supplier risk management.</li>
+      </ul>
+    </div>
+
+    <div class="article-tags">
+      <span class="article-tag">Supply Chain</span>
+      <span class="article-tag">AI</span>
+      <span class="article-tag">Procurement</span>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="contact" class="footer">
+  <div style="max-width:600px; margin:0 auto;">
+    <p style="font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--warm); margin-bottom:12px;">Contact</p>
+    <h2 class="footer__title">Got a challenge?<br>Let's talk.</h2>
+    <div class="footer__actions">
+      <a href="mailto:SalamiHamza@gmail.com" class="footer__email">SalamiHamza@gmail.com</a>
+      <a href="tel:+33630870117" class="footer__phone">+33 6 30 87 01 17</a>
+    </div>
+    <div class="footer__social">
+      <a href="https://www.linkedin.com/in/hamza-salami-243a339a/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Flowka-lab" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.youtube.com/@Flow-Ka" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://hourzone.io" target="_blank" rel="noopener">HourZone</a>
+    </div>
+    <div class="footer__copy">© 2026 Flowka Lab</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>
